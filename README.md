@@ -11,3 +11,5 @@ https://www.youtube.com/watch?v=0iB5IPoTDts&list=PL60rcswVCAgd4r356HuzZwuHSLzOaK
 
 - Django
 - Mysql
+- Flask
+- RabbitMQ
