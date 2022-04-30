@@ -23,6 +23,7 @@ services:
       - AMQP_URI=${AMQP_URI}
     depends_on:
       - db
+    restart: on-failure
   db:
     image: mysql:5.7
     restart: unless-stopped

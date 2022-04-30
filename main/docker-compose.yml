@@ -8,12 +8,14 @@ services:
     command: 'python main.py'
     environment:
       - AMQP_URI=${AMQP_URI}
+      - ADMIN_URI=${ADMIN_URI}
     ports:
       - 8001:5000
     volumes:
       - .:/app
     depends_on:
       - db
+    restart: on-failure
   queue:
     build:
       context: .
@@ -23,6 +25,7 @@ services:
       - AMQP_URI=${AMQP_URI}
     depends_on:
       - db
+    restart: on-failure
   db:
     image: mysql:5.7
     restart: unless-stopped
@@ -33,3 +36,8 @@ services:
       - .dbdata:/var/lib/mysql
     ports:
       - 3307:3306
+
+networks:
+    admin_default:
+      external: true
+  
