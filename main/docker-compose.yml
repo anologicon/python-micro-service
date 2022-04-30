@@ -18,11 +18,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-<<<<<<< HEAD
     command: 'python -u consumer.py'
-=======
-    command: 'python consumer.py'
->>>>>>> 985f21f9d476179016ab128c0f140db2dc0e883e
     environment:
       - AMQP_URI=${AMQP_URI}
     depends_on:
