@@ -1,5 +1,7 @@
 .dbdata/
 .env
+.rabbitmq_data/
+.rabbitmq_log/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

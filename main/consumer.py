@@ -1,5 +1,8 @@
 import pika, os, json
 from main import db, Product
+from dotenv import load_dotenv
+
+load_dotenv()
 
 AMQP_URI = os.environ.get('AMQP_URI')
 

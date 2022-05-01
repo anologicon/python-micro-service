@@ -45,10 +45,11 @@ def like(id):
         productUser = ProductUser(user_id=json['id'	], product_id=id)
         db.session.add(productUser)
         db.session.commit()
-
-        pub('product_liked', id)
     except:
         abort(400, 'Product already liked')
+
+    pub('product_liked', id)
+        
 
     return jsonify({'success': 'Product liked'})
 

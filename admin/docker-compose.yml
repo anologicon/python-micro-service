@@ -6,8 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command: 'python manage.py runserver 0.0.0.0:8000'
-    environment:
-      - AMQP_URI=${AMQP_URI}
     ports:
       - 8000:8000
     volumes:
@@ -19,8 +17,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command: 'python -u consumer.py'
-    environment:
-      - AMQP_URI=${AMQP_URI}
     depends_on:
       - db
     restart: on-failure

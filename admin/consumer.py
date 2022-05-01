@@ -1,15 +1,19 @@
+from dotenv import load_dotenv
 import pika
-import os
 import json
 import django
+import os
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.settings')
 django.setup()
 
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
 from products.models import Product
 
-AMQP_URI = os.environ.get('AMQP_URI')
-
+AMQP_URI = str(os.environ.get('AMQP_URI'))
+print(AMQP_URI)
 params = pika.URLParameters(AMQP_URI)
 
 connection = pika.BlockingConnection(params)
