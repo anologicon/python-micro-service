@@ -13,3 +13,12 @@ https://www.youtube.com/watch?v=0iB5IPoTDts&list=PL60rcswVCAgd4r356HuzZwuHSLzOaK
 - Mysql
 - Flask
 - RabbitMQ
+<br>
+<br>
+## Rabbit container
+
+Para iniciar o container do rabbit, execute no root:
+
+```
+docker-compose up -d
+```
